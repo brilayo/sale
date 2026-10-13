@@ -3,863 +3,675 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parenting in the Digital Age - #1 Guide for Nigerian Parents</title>
+    <title>Parenting in the Digital Age - Official Nigerian Edition</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cabinet+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
+                        emerald: {
                             50: '#f0fdf4',
                             100: '#dcfce7',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
                         },
-                        accent: {
-                            500: '#eab308',
-                            600: '#ca8a04',
+                        navy: {
+                            800: '#0f172a',
+                            900: '#0b1120',
+                            950: '#030712'
                         },
-                        dark: {
-                            800: '#111827',
-                            900: '#0f172a',
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
                         }
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        heading: ['Cabinet Grotesk', 'Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    animation: {
-                        'marquee-slow': 'marquee 45s linear infinite',
-                        'marquee-reverse': 'marquee-reverse 50s linear infinite',
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        },
-                        'marquee-reverse': {
-                            '0%': { transform: 'translateX(-50%)' },
-                            '100%': { transform: 'translateX(0%)' },
-                        }
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .glow-effect {
-            box-shadow: 0 0 25px -5px rgba(22, 163, 74, 0.4);
+        body { font-family: 'Inter', sans-serif; }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 0);
+            background-size: 24px 24px;
         }
-        .marquee-container:hover .animate-marquee-slow,
-        .marquee-container:hover .animate-marquee-reverse {
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.95; transform: scale(1.02); }
+        }
+        .cta-pulse {
+            animation: pulse-slow 3s infinite ease-in-out;
+        }
+        /* Marquee horizontal animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 35s linear infinite;
+        }
+        .animate-marquee:hover {
             animation-play-state: paused;
         }
     </style>
 </head>
-<body class="font-sans bg-slate-50 text-slate-900 antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-brand-900 via-brand-800 to-brand-900 text-white text-xs md:text-sm py-2.5 px-4 text-center font-semibold tracking-wide flex items-center justify-center gap-2 shadow-sm relative z-50">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>SPECIAL OFFER: ₦6,000 Today Only! (Regularly ₦15,000)</span>
-        <span class="hidden md:inline text-emerald-300">| 70,000+ Nigerian Parents Empowered</span>
+    <div class="bg-gradient-to-r from-emerald-900 via-navy-900 to-emerald-900 text-white text-xs sm:text-sm font-medium py-2.5 px-4 text-center border-b border-emerald-700/40 sticky top-0 z-50 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span class="inline-flex items-center gap-1.5 bg-amber-500 text-slate-950 px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                <i class="fa-solid fa-fire text-xs"></i> Limited Promo
+            </span>
+            <span>Official Nigerian Edition: Get Free Access to 5 Practical Toolkits (Worth ₦25,000) Today!</span>
+            <span class="hidden md:inline text-emerald-300 font-semibold">• Offer Ends Soon</span>
+        </div>
     </div>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-[37px] z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
-                    <i class="fa-solid fa-shield-halved"></i>
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-navy-900 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                    P
                 </div>
                 <div>
-                    <span class="font-heading font-extrabold text-lg md:text-xl text-slate-900 leading-tight block">Parenting in the <span class="text-brand-600">Digital Age</span></span>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-semibold block">Official Nigerian Edition</span>
+                    <span class="font-extrabold text-slate-900 text-lg tracking-tight block leading-none">Parenting in Digital Age</span>
+                    <span class="text-xs text-emerald-700 font-semibold tracking-wide uppercase">Official Nigerian Edition</span>
                 </div>
             </div>
-
-            <div class="hidden md:flex items-center gap-6">
-                <a href="#what-inside" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">What's Inside</a>
-                <a href="#reviews" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">30+ Reviews</a>
-                <a href="#toolkits" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Bonus Toolkits</a>
-                <a href="#order-now" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center gap-2">
-                    <span>Get Instant Access</span>
-                    <span class="bg-brand-800 text-emerald-200 text-xs px-2 py-0.5 rounded-md">₦6,000</span>
-                </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-emerald-700 transition-colors">What's Inside</a>
+                <a href="#toolkits" class="hover:text-emerald-700 transition-colors">Included Toolkits</a>
+                <a href="#reviews" class="hover:text-emerald-700 transition-colors">Parent Reviews</a>
+                <a href="#faq" class="hover:text-emerald-700 transition-colors">FAQ</a>
             </div>
+
+            <a href="https://selar.com/1d311683r5" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2">
+                <span>Order Now — ₦5,500</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-brand-950 text-white pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden">
-        <!-- Subtle Grid Pattern Background -->
-        <div class="absolute inset-0 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
-        
+    <section class="relative bg-gradient-to-b from-slate-900 via-navy-900 to-slate-900 text-white pt-12 pb-20 overflow-hidden bg-pattern">
+        <!-- Accent Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Hero Badge -->
-            <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
-                <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold text-xs md:text-sm px-4 py-1.5 rounded-full flex items-center gap-2">
-                    <i class="fa-solid fa-trophy text-amber-400"></i>
-                    #1 Rated Digital Safety Manual in Nigeria
-                </span>
-                <span class="bg-amber-500/20 border border-amber-500/40 text-amber-300 font-extrabold text-xs md:text-sm px-4 py-1.5 rounded-full flex items-center gap-1.5">
-                    <i class="fa-solid fa-fire"></i>
-                    70,000+ Copies Sold
-                </span>
-            </div>
-
-            <!-- Main Headline -->
-            <div class="text-center max-w-4xl mx-auto">
-                <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] mb-6 text-slate-100">
-                    How to Protect Your Kids from Digital Dangers the Smart Way.<span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Learn how to safeguard your children as a Parent.</span>
-                </h1>
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <p class="text-slate-300 text-base md:text-xl font-normal max-w-3xl mx-auto leading-relaxed mb-8">
-                    The <strong class="text-white underline decoration-brand-500 underline-offset-4">#1 comprehensive guide</strong> designed specifically for Nigerian parents to master modern technical controls, establish healthy screen limits, and raise disciplined children.
-                </p>
+                <!-- Left Column: Copy & Value Proposition -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    
+                    <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                        <span>#1 Best-Selling Nigerian Practical Family Guide</span>
+                    </div>
 
-                <!-- Urgency Countdown Banner -->
-                <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 md:p-6 max-w-2xl mx-auto mb-10 shadow-2xl backdrop-blur-sm">
-                    <p class="text-xs uppercase tracking-wider text-slate-400 font-bold mb-3 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-clock text-amber-400 animate-pulse"></i>
-                        Limited-Time Promo Price of ₦6,000 Ends In:
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        Protect Your Kids From Online Dangers <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">Without Fighting Them Every Day</span>
+                    </h1>
+
+                    <p class="text-base sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
+                        A practical, step-by-step roadmap specifically crafted for Nigerian families to safeguard children from cyber threats, addiction, and exposure while instilling discipline in an interconnected modern world.
                     </p>
-                    <div class="grid grid-cols-4 gap-2 md:gap-4 text-center">
-                        <div class="bg-slate-900 p-2 md:p-3 rounded-xl border border-slate-700">
-                            <span id="hours" class="font-heading font-black text-xl md:text-3xl text-emerald-400 block">04</span>
-                            <span class="text-[10px] md:text-xs text-slate-400 uppercase font-semibold">Hours</span>
+
+                    <!-- Author Info Badge -->
+                    <div class="flex items-center justify-center lg:justify-start gap-3 py-1">
+                        <div class="flex -space-x-2">
+                            <div class="w-10 h-10 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold border-2 border-slate-900 text-xs">AA</div>
+                            <div class="w-10 h-10 rounded-full bg-navy-800 text-emerald-400 flex items-center justify-center font-bold border-2 border-slate-900 text-xs">CO</div>
                         </div>
-                        <div class="bg-slate-900 p-2 md:p-3 rounded-xl border border-slate-700">
-                            <span id="minutes" class="font-heading font-black text-xl md:text-3xl text-emerald-400 block">38</span>
-                            <span class="text-[10px] md:text-xs text-slate-400 uppercase font-semibold">Minutes</span>
+                        <div class="text-left">
+                            <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold"></p>
+                            <p class="text-sm font-bold text-slate-100"></p>
                         </div>
-                        <div class="bg-slate-900 p-2 md:p-3 rounded-xl border border-slate-700">
-                            <span id="seconds" class="font-heading font-black text-xl md:text-3xl text-emerald-400 block">12</span>
-                            <span class="text-[10px] md:text-xs text-slate-400 uppercase font-semibold">Seconds</span>
+                    </div>
+
+                    <!-- Social Proof Numbers -->
+                    <div class="grid grid-cols-3 gap-4 pt-2 pb-2 border-y border-slate-800/80 my-4 max-w-xl mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-black text-amber-400">70,000+</p>
+                            <p class="text-xs text-slate-400 font-medium">Copies Sold</p>
                         </div>
-                        <div class="bg-slate-900 p-2 md:p-3 rounded-xl border border-slate-700">
-                            <span id="millis" class="font-heading font-black text-xl md:text-3xl text-amber-400 block">89</span>
-                            <span class="text-[10px] md:text-xs text-slate-400 uppercase font-semibold">MS</span>
+                        <div class="text-center lg:text-left border-x border-slate-800 px-2">
+                            <p class="text-2xl sm:text-3xl font-black text-emerald-400">4.9/5 ★</p>
+                            <p class="text-xs text-slate-400 font-medium">Verified Reviews</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-black text-teal-300">5 Free</p>
+                            <p class="text-xs text-slate-400 font-medium">Actionable Toolkits</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA & Urgency Box -->
+                    <div class="space-y-4 pt-2">
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://selar.com/1d311683r5" class="w-full sm:w-auto cta-pulse bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-extrabold text-lg px-8 py-4 rounded-xl shadow-xl hover:shadow-emerald-500/25 transition-all text-center flex items-center justify-center gap-3">
+                                <span>Get Instant Access — ₦5,500</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <button onclick="openPreviewModal()" class="w-full sm:w-auto bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-base px-6 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-book-open text-emerald-400"></i>
+                                <span>Preview Inside</span>
+                            </button>
+                        </div>
+
+                        <!-- Trust signals below CTA -->
+                        <div class="flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 pt-1">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> Instant PDF Digital Download</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Official Book Visual Showcase -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative group max-w-md w-full">
+                        <!-- Glow ring around the image -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                        
+                        <!-- Main Image Showcase Frame -->
+                        <div class="relative bg-slate-800/80 p-3 sm:p-4 rounded-2xl border border-slate-700 shadow-2xl">
+                            <img 
+                                src="71a69905-6072-4d35-83c8-28a64298ae38_2.jpeg" 
+                                alt="Parenting in the Digital Age Official Book Cover" 
+                                class="w-full h-auto rounded-lg shadow-lg object-cover transform transition duration-300 group-hover:scale-[1.01]"
+                            />
+                            
+                            <!-- Overlaid Floating Badge -->
+                            <div class="absolute -bottom-4 -left-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 px-4 py-2 rounded-xl shadow-xl font-black text-xs sm:text-sm flex items-center gap-2 border border-amber-300">
+                                <i class="fa-solid fa-award text-slate-950 text-base"></i>
+                                <div>
+                                    <p class="leading-none">70,000+ COPIES</p>
+                                    <p class="text-[10px] font-semibold opacity-90">SOLD ACROSS NIGERIA</p>
+                                </div>
+                            </div>
+
+                            <!-- Overlaid Top Right Tag -->
+                            <div class="absolute top-6 right-6 bg-emerald-800/90 text-emerald-100 text-xs font-bold px-3 py-1.5 rounded-lg border border-emerald-500/40 backdrop-blur-md shadow-lg">
+                                <i class="fa-solid fa-check-circle text-emerald-400 mr-1"></i> Includes 5 Toolkits
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero CTA Button -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                    <a href="#order-now" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-brand-600 hover:from-emerald-600 hover:to-brand-700 text-white font-black text-lg md:text-xl px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform flex items-center justify-center gap-3 group border-2 border-emerald-400/30">
-                        <i class="fa-solid fa-lock-open text-emerald-200"></i>
-                        <span>GET INSTANT ACCESS FOR ₦6,000</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- Trust Guarantee Micro Copy -->
-                <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 font-medium">
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> Instant PDF Download</span>
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-mobile-screen-button text-emerald-400"></i> Read on Phone/Tablet/Laptop</span>
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-check text-blue-400"></i> 100% Safe Paystack/Selar Checkout</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- High-Impact Stats Bar -->
-    <section class="bg-brand-900 border-y border-brand-800 text-white py-6">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="border-r border-brand-800/80 last:border-r-0">
-                <p class="font-heading font-extrabold text-2xl md:text-4xl text-emerald-400">70,000+</p>
-                <p class="text-xs md:text-sm text-emerald-100/80 font-medium mt-1">Copies Sold in West Africa</p>
-            </div>
-            <div class="border-r border-brand-800/80 last:border-r-0">
-                <p class="font-heading font-extrabold text-2xl md:text-4xl text-amber-400">36 States</p>
-                <p class="text-xs md:text-sm text-emerald-100/80 font-medium mt-1">Nigerian Parents Reached</p>
-            </div>
-            <div class="border-r border-brand-800/80 last:border-r-0">
-                <p class="font-heading font-extrabold text-2xl md:text-4xl text-emerald-400">4.9/5 ★</p>
-                <p class="text-xs md:text-sm text-emerald-100/80 font-medium mt-1">Average Rating (3000+ Reviews)</p>
-            </div>
-            <div>
-                <p class="font-heading font-extrabold text-2xl md:text-4xl text-amber-400">100%</p>
-                <p class="text-xs md:text-sm text-emerald-100/80 font-medium mt-1">Practical & Non-Technical</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 30 Nigerian Parent Marquee Reviews -->
-    <section id="reviews" class="py-12 bg-slate-900 overflow-hidden border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 mb-8 text-center">
-            <span class="text-emerald-400 font-extrabold text-xs uppercase tracking-widest block mb-2">Real Feedback From Real Homes</span>
-            <h2 class="font-heading text-2xl md:text-4xl font-extrabold text-white">Loved by 70,000+ Nigerian Parents Across the Nation</h2>
-            <p class="text-slate-400 text-sm md:text-base mt-2">See what parents in Lagos, Abuja, Port Harcourt, Kano, and Enugu are saying.</p>
+    <!-- 30 Nigerian Parents Live Marquee Section -->
+    <section class="bg-emerald-950 text-white py-6 border-y border-emerald-800/60 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 mb-3 text-center">
+            <p class="text-xs font-bold uppercase tracking-widest text-emerald-400">
+                <i class="fa-solid fa-heart text-amber-400 mr-1.5"></i> Trusted by Over 70,000 Nigerian Parents &amp; Educators
+            </p>
         </div>
 
-        <!-- Row 1 Marquee (Scroll Left) -->
-        <div class="marquee-container overflow-hidden whitespace-nowrap py-3 mb-4 bg-slate-950/50 border-y border-slate-800/60">
-            <div class="inline-flex gap-4 animate-marquee-slow" id="marquee-row-1">
-                <!-- JS Populated Row 1 -->
-            </div>
-        </div>
-
-        <!-- Row 2 Marquee (Scroll Right) -->
-        <div class="marquee-container overflow-hidden whitespace-nowrap py-3 bg-slate-950/50 border-b border-slate-800/60">
-            <div class="inline-flex gap-4 animate-marquee-reverse" id="marquee-row-2">
-                <!-- JS Populated Row 2 -->
-            </div>
-        </div>
-    </section>
-
-    <!-- The Modern African Parent's Dilemma -->
-    <section class="py-16 md:py-24 bg-white relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="bg-red-100 text-red-700 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">
-                    The Harsh Reality
-                </span>
-                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                    The Modern African Parent's Dilemma
-                </h2>
-                <div class="w-20 h-1.5 bg-brand-600 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="bg-gradient-to-br from-slate-50 to-emerald-50/40 border border-slate-200 rounded-3xl p-6 md:p-10 shadow-sm relative overflow-hidden">
-                <p class="text-slate-700 text-lg md:text-xl leading-relaxed mb-6 font-medium">
-                    In homes across <strong class="text-brand-800 font-bold">Lagos, Abuja, Port Harcourt, Enugu, and Kano</strong>, smartphones have brought unfiltered global influences right into our children's hands.
-                </p>
-                <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8">
-                    Caught between passive indulgence and reactive paranoia, many Nigerian parents watch helplessly as kids fall into online grooming, unmoderated WhatsApp group traps, and hidden in-app gaming purchases.
-                </p>
-
-                <!-- Key Pain Points Grid -->
-                <div class="grid md:grid-cols-3 gap-6 my-8">
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-                        <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-3">
-                            <i class="fa-solid fa-comments text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">WhatsApp Group Traps</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Children being quietly added into explicit, unmonitored group chats by strangers or peers without parental knowledge.</p>
+        <div class="relative w-full overflow-hidden py-2">
+            <div class="animate-marquee space-x-4">
+                
+                <!-- Review Card Loop (Repeated for infinite continuous smooth ticker) -->
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Mrs. Folake Adeyemi (Lagos)</span>
+                        <span class="text-amber-400">★★★★★</span>
                     </div>
-
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-3">
-                            <i class="fa-solid fa-credit-card text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">In-App Purchase Traps</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Accidental or manipulated bank debits from mobile games, online gaming tokens, and scam subscriptions.</p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-                        <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-3">
-                            <i class="fa-solid fa-user-ninja text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">Yahoo-Yahoo Cultivation</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Peer pressure enticing young teens into cybercrime subcultures disguised as "easy internet hustle."</p>
-                    </div>
+                    <p class="text-slate-300 line-clamp-2">"The Digital Contract ended the daily fighting over screen time in our house!"</p>
                 </div>
 
-                <!-- Reassurance Highlight -->
-                <div class="bg-brand-900 text-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-md">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-600 flex-shrink-0 flex items-center justify-center text-white text-2xl font-bold">
-                        <i class="fa-solid fa-lightbulb"></i>
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Dr. Emeka Nwosu (Abuja)</span>
+                        <span class="text-amber-400">★★★★★</span>
                     </div>
-                    <div>
-                        <h3 class="font-heading text-xl font-bold text-emerald-300 mb-2">You Do Not Need To Be A Software Engineer To Protect Your Child!</h3>
-                        <p class="text-slate-200 text-sm md:text-base leading-relaxed">
-                            <strong class="text-white">"Parenting in the Digital Age"</strong> provides a practical, balanced path combining modern technical safeguards with timeless moral character specifically tuned for the African family setup.
-                        </p>
-                    </div>
+                    <p class="text-slate-300 line-clamp-2">"Extremely practical. Dr. Adebayo and Chiamaka nailed the realities of raising kids in Nigeria today."</p>
                 </div>
+
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Blessing Okon (Port Harcourt)</span>
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 line-clamp-2">"The 30-Day Detox tool was a game changer for my 13-year-old son!"</p>
+                </div>
+
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Engr. Tunde Bakare (Ibadan)</span>
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 line-clamp-2">"Every Nigerian parent who gives their child a smartphone MUST read this."</p>
+                </div>
+
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Aisha Bello (Kano)</span>
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 line-clamp-2">"Clear, biblical & moral alignment combined with modern cyber-safety steps."</p>
+                </div>
+
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Pastor Chidi Obi (Enugu)</span>
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 line-clamp-2">"Recommended this book to all parents in our church family. Brilliant work!"</p>
+                </div>
+
+                <!-- Duplicate set for seamless continuous marquee loop -->
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Mrs. Folake Adeyemi (Lagos)</span>
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 line-clamp-2">"The Digital Contract ended the daily fighting over screen time in our house!"</p>
+                </div>
+
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Dr. Emeka Nwosu (Abuja)</span>
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 line-clamp-2">"Extremely practical. Dr. Adebayo and Chiamaka nailed the realities of raising kids in Nigeria today."</p>
+                </div>
+
+                <div class="bg-slate-900/90 border border-emerald-800/50 p-3.5 rounded-xl text-xs w-80 flex-shrink-0 shadow-sm">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-bold text-slate-200">Blessing Okon (Port Harcourt)</span>
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 line-clamp-2">"The 30-Day Detox tool was a game changer for my 13-year-old son!"</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- What You Will Discover Inside -->
-    <section id="what-inside" class="py-16 md:py-24 bg-slate-900 text-white relative">
+    <!-- Problem & Reality Section -->
+    <section id="about" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-400 font-extrabold text-xs uppercase tracking-widest block mb-2">Comprehensive Roadmap</span>
-                <h2 class="font-heading text-3xl md:text-5xl font-extrabold tracking-tight">What You Will Discover Inside</h2>
-                <p class="text-slate-400 text-base md:text-lg mt-3">Step-by-step instructions designed for busy parents. Zero technical jargon.</p>
+                <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                    The Modern Nigerian Parenting Reality
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-4 tracking-tight">
+                    Are You Worried About What Your Children Are Really Doing On Their Phones?
+                </h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Today’s Nigerian child is exposed to social media predators, adult content, online scams, and screen addiction at younger ages than ever before.
+                </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1: Device Controls -->
-                <div class="bg-slate-800/90 border border-slate-700/80 rounded-3xl p-8 hover:border-emerald-500/50 transition-all shadow-lg flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-sliders"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-extrabold text-white mb-3">1. Device-Level Controls</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Step-by-step visual setup guides for locking down phones, laptops, and smart TVs without breaking them.
-                        </p>
-                        <ul class="space-y-3 text-xs md:text-sm text-slate-300">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
-                                <span><strong>Google Family Link:</strong> Set strict bedtime locks and screen quotas.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
-                                <span><strong>Apple Screen Time:</strong> Block explicit websites and app downloads.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
-                                <span><strong>CleanBrowsing DNS:</strong> Router-level shield to block adult content across home Wi-Fi.</span>
-                            </li>
-                        </ul>
+                
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold mb-5">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Uncontrolled Screen Time</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Children spending 5+ hours daily on TikTok, YouTube, and online games leading to poor academic performance, sleep loss, and reduced face-to-face discipline.
+                    </p>
                 </div>
 
-                <!-- Card 2: Cybercrime & Legal -->
-                <div class="bg-slate-800/90 border border-slate-700/80 rounded-3xl p-8 hover:border-amber-500/50 transition-all shadow-lg flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-gavel"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-extrabold text-white mb-3">2. Cybercrime & Legal Realities</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Understand the real legal consequences and protect your teenage children from modern cyber traps.
-                        </p>
-                        <ul class="space-y-3 text-xs md:text-sm text-slate-300">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                                <span><strong>Section 24 Cybercrimes Act:</strong> What every parent must know to prevent legal trouble.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                                <span><strong>Sextortion Safeguards:</strong> How to stop online blackmailers from targetting teenagers.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                                <span><strong>Yahoo Yahoo Defense:</strong> De-influencing children from peer-driven cybercrime culture.</span>
-                            </li>
-                        </ul>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl font-bold mb-5">
+                        <i class="fa-solid fa-user-ninja"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Cyberbullying &amp; Predators</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dangerous online strangers targeting kids through private messaging, gaming groups, and social platforms without parental knowledge.
+                    </p>
                 </div>
 
-                <!-- Card 3: Social Hardening -->
-                <div class="bg-slate-800/90 border border-slate-700/80 rounded-3xl p-8 hover:border-teal-500/50 transition-all shadow-lg flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-extrabold text-white mb-3">3. WhatsApp & Social Hardening</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Fortify the most used apps in Nigeria against scammers, stalkers, and unauthorized groups.
-                        </p>
-                        <ul class="space-y-3 text-xs md:text-sm text-slate-300">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-teal-400 mt-0.5"></i>
-                                <span><strong>Group Add Privacy:</strong> Block unknown numbers from adding your kids to group chats.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-teal-400 mt-0.5"></i>
-                                <span><strong>Profile Visibility Locks:</strong> Prevent strangers from viewing child photos/status.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-teal-400 mt-0.5"></i>
-                                <span><strong>Phishing Scams Defense:</strong> Spot and avoid fake "Free 10GB Data" link scams instantly.</span>
-                            </li>
-                        </ul>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl font-bold mb-5">
+                        <i class="fa-solid fa-comments"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Parent-Child Friction</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Constant arguments over phone restrictions, passwords, and privacy that erode trust between parents and growing children.
+                    </p>
                 </div>
+
             </div>
+
         </div>
     </section>
 
-    <!-- Actionable Toolkits Included -->
-    <section id="toolkits" class="py-16 md:py-24 bg-slate-50 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="bg-brand-100 text-brand-800 font-extrabold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">
-                    Bonus Ready-To-Use Resources
+    <!-- Actionable Toolkits Section (Highlighted from Cover) -->
+    <section id="toolkits" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
+                    Included Actionable Toolkits
                 </span>
-                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-                    6 Actionable Toolkits Included Inside
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-4 tracking-tight">
+                    Not Just Theory — You Get Ready-to-Use Practical Frameworks
                 </h2>
-                <p class="text-slate-600 text-base md:text-lg mt-3">Practical printables and plug-and-play templates you can implement with your children today.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Toolkit Item 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex-shrink-0 flex items-center justify-center font-bold text-xl">
-                        <i class="fa-solid fa-file-contract"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-1">Family Digital Contract</h3>
-                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed">Customizable agreement template outlining agreed screen times, phone-free zones, and online boundaries.</p>
-                    </div>
-                </div>
-
-                <!-- Toolkit Item 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex-shrink-0 flex items-center justify-center font-bold text-xl">
-                        <i class="fa-solid fa-notes-medical"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-1">Diagnostic Health Assessment</h3>
-                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed">Quick evaluation score-sheet to accurately diagnose your child's level of digital addiction early.</p>
-                    </div>
-                </div>
-
-                <!-- Toolkit Item 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex-shrink-0 flex items-center justify-center font-bold text-xl">
-                        <i class="fa-solid fa-[#000] fa-list-check"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-1">Weekend Tech Audit Checklist</h3>
-                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed">A 15-minute weekly checklist to audit device settings, installed apps, and browser histories effortlessly.</p>
-                    </div>
-                </div>
-
-                <!-- Toolkit Item 4 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex-shrink-0 flex items-center justify-center font-bold text-xl">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-1">15 Offline Activity Ideas</h3>
-                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed">Fun, engaging offline games and activities specifically chosen to replace screen boredom in Nigerian homes.</p>
-                    </div>
-                </div>
-
-                <!-- Toolkit Item 5 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex-shrink-0 flex items-center justify-center font-bold text-xl">
-                        <i class="fa-solid fa-map"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-1">Age-by-Age Safeguard Roadmap</h3>
-                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed">Tailored protection strategies broken down stage by stage—from toddlers and pre-teens to independent high schoolers.</p>
-                    </div>
-                </div>
-
-                <!-- Toolkit Item 6 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start">
-                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex-shrink-0 flex items-center justify-center font-bold text-xl">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-1">30-Day Family Digital Detox</h3>
-                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed">Step-by-step challenge to help reset screen habits without tantrums, drama, or constant arguments.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Emergency Directory -->
-    <section class="py-16 bg-slate-900 text-white relative border-y border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-                    <div class="lg:w-1/2">
-                        <span class="bg-red-500/20 text-red-400 font-extrabold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3 border border-red-500/30">
-                            <i class="fa-solid fa-phone-volume mr-1"></i> Essential Protection Resource
-                        </span>
-                        <h2 class="font-heading text-2xl md:text-4xl font-black mb-4 leading-tight">
-                            Official Nigerian Cyber Emergency Directory Included
-                        </h2>
-                        <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
-                            Never feel helpless in times of crisis. The book contains direct emergency escalation phone lines, email desks, and reporting protocols for Nigerian law enforcement and regulatory bodies:
-                        </p>
-                        <ul class="grid grid-cols-2 gap-3 text-xs md:text-sm font-semibold text-slate-200">
-                            <li class="flex items-center gap-2 bg-slate-800/80 p-2.5 rounded-xl border border-slate-700">
-                                <i class="fa-solid fa-shield-cat text-emerald-400"></i> NPF Cybercrime Unit
-                            </li>
-                            <li class="flex items-center gap-2 bg-slate-800/80 p-2.5 rounded-xl border border-slate-700">
-                                <i class="fa-solid fa-tower-cell text-emerald-400"></i> NCC Desk
-                            </li>
-                            <li class="flex items-center gap-2 bg-slate-800/80 p-2.5 rounded-xl border border-slate-700">
-                                <i class="fa-solid fa-hand-holding-hand text-emerald-400"></i> NAPTIP Anti-Grooming
-                            </li>
-                            <li class="flex items-center gap-2 bg-slate-800/80 p-2.5 rounded-xl border border-slate-700">
-                                <i class="fa-solid fa-film text-emerald-400"></i> NFVCB Media Board
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="lg:w-5/12 bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center w-full">
-                        <div class="w-16 h-16 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl animate-pulse">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-2">Immediate Peace of Mind</h3>
-                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed mb-4">
-                            Should your child face online extortion or harassment, you'll have instant step-by-step instructions on who to contact and how to report legally.
-                        </p>
-                        <a href="#order-now" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider py-2.5 px-5 rounded-xl transition-colors">
-                            Get Directory Inside Book
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Flat Single Pricing Section -->
-    <section id="order-now" class="py-16 md:py-24 bg-gradient-to-b from-slate-100 to-emerald-50/50 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="bg-emerald-100 text-emerald-800 font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block mb-3">
-                    One-Time Investment
-                </span>
-                <h2 class="font-heading text-3xl md:text-5xl font-black text-slate-900">
-                    Get Instant Access Today
-                </h2>
-                <p class="text-slate-600 text-base md:text-lg mt-2">
-                    Everything you need to safeguard your children in one complete bundle.
+                <p class="text-slate-300 mt-3 text-sm sm:text-base">
+                    Every copy includes these 5 specialized toolkits designed specifically for Nigerian household environments:
                 </p>
             </div>
 
-            <!-- Single Focused Pricing Box -->
-            <div class="bg-white rounded-3xl border-2 border-emerald-500 shadow-2xl overflow-hidden relative glow-effect">
-                <!-- Popular Badge -->
-                <div class="bg-gradient-to-r from-emerald-600 to-brand-700 text-white text-center py-2 text-xs md:text-sm font-extrabold uppercase tracking-widest">
-                    ★ COMPLETE ALL-IN-ONE DIGITAL ACCESS BUNDLE ★
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Toolkit Item 1 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">1</span>
+                        <h3 class="font-bold text-lg text-white">Family Digital Contract</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        A printable contract template for parents and children to sign together setting boundaries on device usage, bedroom phone bans, and online behavior.
+                    </p>
                 </div>
 
-                <div class="p-6 md:p-10">
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
-                        <div>
-                            <span class="text-xs uppercase font-extrabold text-emerald-600 tracking-wider">Complete E-Book & Toolkits</span>
-                            <h3 class="font-heading text-2xl md:text-3xl font-black text-slate-900 mt-1">
-                                Parenting in the Digital Age
-                            </h3>
-                            <p class="text-slate-500 text-sm mt-1">Instant PDF Download for Phone, Tablet & Computer</p>
-                        </div>
-                        <div class="text-center md:text-right bg-emerald-50 p-4 rounded-2xl border border-emerald-100 w-full md:w-auto">
-                            <span class="text-slate-400 line-through text-sm font-bold block">Regular Price: ₦15,000</span>
-                            <div class="flex items-baseline justify-center md:justify-end gap-1">
-                                <span class="font-heading font-black text-4xl md:text-5xl text-emerald-700">₦6,000</span>
-                                <span class="text-xs text-slate-500 font-bold">ONLY</span>
-                            </div>
-                            <span class="text-[11px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md inline-block mt-1">Save 60% Today</span>
-                        </div>
+                <!-- Toolkit Item 2 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">2</span>
+                        <h3 class="font-bold text-lg text-white">30-Day Detox Challenge</h3>
                     </div>
-
-                    <!-- Included Breakdown List -->
-                    <div class="py-8 space-y-4">
-                        <p class="font-bold text-slate-900 text-sm uppercase tracking-wider">What You Get Today For ₦6,000:</p>
-                        
-                        <div class="grid md:grid-cols-2 gap-3 text-sm text-slate-700">
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-[#000] fa-check-circle text-emerald-600 text-lg mt-0.5"></i>
-                                <span><strong>Full Digital Guide</strong> (Complete 2026 Nigerian Edition)</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-[#000] fa-check-circle text-emerald-600 text-lg mt-0.5"></i>
-                                <span><strong>Family Digital Contract</strong> (Printable PDF)</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-[#000] fa-check-circle text-emerald-600 text-lg mt-0.5"></i>
-                                <span><strong>Device Setup Guides</strong> (Family Link, Apple, DNS)</span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-[#000] fa-check-circle text-emerald-600 text-lg mt-0.5"></i>
-                                <span><strong>Weekend Tech Audit Checklist</strong></span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-[#000] fa-check-circle text-emerald-600 text-lg mt-0.5"></i>
-                                <span><strong>15 Offline Activity Guides</strong></span>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-[#000] fa-check-circle text-emerald-600 text-lg mt-0.5"></i>
-                                <span><strong>Official Emergency Helplines Directory</strong></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CTA Action Button -->
-                    <div class="pt-2">
-                        <button onclick="handlePurchase()" class="w-full bg-gradient-to-r from-emerald-600 via-brand-600 to-emerald-700 hover:from-emerald-700 hover:to-brand-800 text-white font-black text-xl py-5 px-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 transform active:scale-95 cursor-pointer">
-                            <i class="fa-solid fa-lock text-emerald-200"></i>
-                            <span>GRAB YOUR COPY TODAY FOR ₦6,000</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                        
-                        <p class="text-center text-xs text-slate-500 font-medium mt-4 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-shield-halved text-emerald-600"></i>
-                            Instant Delivery via Email or WhatsApp immediately after payment.
-                        </p>
-                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        A step-by-step daily schedule that gradually reduces device dependency without triggering emotional tantrums or rebellious behavior.
+                    </p>
                 </div>
 
-                <!-- Footer Trust Badges -->
-                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex flex-wrap items-center justify-center gap-6 text-slate-400 text-xs">
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock text-slate-600"></i> 256-Bit Encrypted Payment</span>
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-credit-card text-slate-600"></i> Card / Bank Transfer / USSD</span>
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-download text-slate-600"></i> Instant PDF Download</span>
+                <!-- Toolkit Item 3 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">3</span>
+                        <h3 class="font-bold text-lg text-white">Weekend Tech Audit</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        A 15-minute weekly checklist to audit home WiFi settings, tablet privacy restrictions, and YouTube/TikTok parental controls.
+                    </p>
+                </div>
+
+                <!-- Toolkit Item 4 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">4</span>
+                        <h3 class="font-bold text-lg text-white">Cybercrime Law Guides</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Simplified breakdown of Nigerian cybercrime laws, protecting teenagers from illegal online activities, fraud traps, and identity theft.
+                    </p>
+                </div>
+
+                <!-- Toolkit Item 5 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-6 rounded-2xl hover:border-emerald-500/50 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">5</span>
+                        <h3 class="font-bold text-lg text-white">Age-by-Age Safeguard Roadmap</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Customized safety guidance tailored specifically for toddlers (2-5), pre-teens (6-12), and teenagers (13-18).
+                    </p>
+                </div>
+
+                <!-- Toolkit Bonus Callout -->
+                <div class="bg-gradient-to-br from-emerald-900 to-navy-900 border border-emerald-500/40 p-6 rounded-2xl flex flex-col justify-center items-center text-center">
+                    <i class="fa-solid fa-gift text-3xl text-amber-400 mb-2"></i>
+                    <h3 class="font-extrabold text-lg text-white">All 5 Toolkits Included</h3>
+                    <p class="text-emerald-200 text-xs mt-1">Included inside your copy at zero extra cost today!</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Authors Section -->
+                    
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Pricing Offer & Checkout Section -->
+    <section id="order" class="py-16 sm:py-24 bg-gradient-to-b from-slate-900 to-navy-950 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-gradient-to-b from-slate-800 to-slate-900 border-2 border-emerald-500/50 rounded-3xl shadow-2xl overflow-hidden">
+                
+                <!-- Card Top Header -->
+                <div class="bg-emerald-600 text-white px-6 py-4 text-center font-bold text-sm tracking-wide uppercase flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bolt text-amber-300"></i>
+                    <span>Special Promotional Discount — Official Nigerian Edition</span>
+                </div>
+
+                <div class="p-6 sm:p-10 text-center space-y-8">
+                    
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white">Get Your Copy of Parenting in the Digital Age</h2>
+                        <p class="text-slate-300 text-sm sm:text-base mt-2">Instant Digital Download Access (PDF) + 5 Free Actionable Toolkits</p>
+                    </div>
+
+                    <!-- Price Box -->
+                    <div class="inline-flex flex-col items-center justify-center bg-slate-900/90 border border-slate-700 px-8 py-6 rounded-2xl shadow-inner">
+                        <span class="text-slate-400 text-xs line-through font-semibold uppercase tracking-wider">Regular Price: ₦15,000</span>
+                        <div class="flex items-baseline gap-2 mt-1">
+                            <span class="text-4xl sm:text-6xl font-black text-emerald-400">₦5,500</span>
+                            <span class="text-xs text-emerald-300 font-bold uppercase">Buy Now</span>
+                        </div>
+                        <span class="mt-2 text-xs text-amber-400 font-semibold bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
+                            Save 60% Today Only
+                        </span>
+                    </div>
+
+                    <!-- Features Checklist -->
+                    <div class="max-w-md mx-auto text-left space-y-3 text-sm text-slate-200 py-2">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span>Full Digital Book: <strong>Parenting in the Digital Age</strong></span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Toolkit #1:</strong> Printable Family Digital Contract</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Toolkit #2:</strong> 30-Day Screen Time Detox Challenge</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Toolkit #3:</strong> Weekend Home Tech Security Audit</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Toolkit #4:</strong> Nigerian Cybercrime Law Guides for Youth</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Toolkit #5:</strong> Age-by-Age Safeguard Roadmap (2 to 18 yrs)</span>
+                        </div>
+                    </div>
+
+                    <!-- Simulated Timer -->
+                    <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl max-w-sm mx-auto">
+                        <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-2">Discount Expires In:</p>
+                        <div class="flex justify-center items-center gap-3 font-mono text-xl font-bold text-amber-400" id="countdown-timer">
+                            <span bg-slate-800 px-3 py-1 rounded>14m</span> : <span bg-slate-800 px-3 py-1 rounded>32s</span>
+                        </div>
+                    </div>
+
+                    <!-- Payment Button -->
+                  
+                    <div class="space-y-3">
+                        <button onclick="" class="w-full sm:w-auto min-w-[320px] bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-extrabold text-xl px-10 py-5 rounded-2xl shadow-xl hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-3 mx-auto">
+                            <i class="fa-solid fa-lock text-emerald-200"></i>
+                            <span></span>
+                            <a href="https://selar.com/1d311683r5" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2">
+                <span center >Order Now — ₦5,500</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+                        </button>
+                        <p class="text-xs text-slate-400">Secure instant delivery via email immediately after payment.</p>
+                    </div>
+
+                    <!-- Payment Logos -->
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-center gap-6 text-slate-400 text-xs">
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> One time payment </span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> </span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-building-columns"></i> Bank Transfer</span>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 md:py-24 bg-white">
+    <section id="faq" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-brand-600 font-extrabold text-xs uppercase tracking-widest block mb-2">Got Questions?</span>
-                <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
+            <div class="text-center mb-12">
+                <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Frequently Asked Questions</span>
+                <h2 class="text-3xl font-black text-slate-900 mt-3">Got Questions? We Have Answers.</h2>
             </div>
 
-            <div class="space-y-4" id="faq-accordion">
-                <!-- FAQ 1 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
-                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/80 transition-colors">
-                        <span>How will I receive the book after paying ₦6,000?</span>
-                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-                        Immediately after successful payment via Card or Bank Transfer, you will be redirected to download your PDF instantly. A backup copy and download link will also be automatically sent to your email address.
-                    </div>
+            <div class="space-y-4">
+                
+                <div class="border border-slate-200 rounded-2xl p-5 hover:border-emerald-300 transition-colors">
+                    <h3 class="font-bold text-slate-900 text-lg flex items-center justify-between cursor-pointer">
+                        <span>How do I receive the book after payment?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Immediately after completing your ₦6,000 payment via Paystack, you will receive an automatic email download link to access the PDF e-book and all 5 toolkits on your phone, tablet, or computer.
+                    </p>
                 </div>
 
-                <!-- FAQ 2 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
-                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/80 transition-colors">
-                        <span>I am not tech-savvy. Will I be able to set this up?</span>
-                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-                        Yes! The book was written specifically for everyday parents. Every device setup includes clear step-by-step instructions with screen descriptions so you can follow along easily without needing technical skills.
-                    </div>
+                <div class="border border-slate-200 rounded-2xl p-5 hover:border-emerald-300 transition-colors">
+                    <h3 class="font-bold text-slate-900 text-lg flex items-center justify-between cursor-pointer">
+                        <span>Is this suitable for parents of teenagers?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Yes! The book contains dedicated chapters specifically addressing teenage cyber safety, social media peer pressure, online gaming risks, and cybercrime laws in Nigeria.
+                    </p>
                 </div>
 
-                <!-- FAQ 3 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
-                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/80 transition-colors">
-                        <span>Can I read this eBook on my phone?</span>
-                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-                        Yes. It comes in a high-quality PDF format formatted for clear reading on Android phones, iPhones, iPads, tablets, and laptops.
-                    </div>
+                <div class="border border-slate-200 rounded-2xl p-5 hover:border-emerald-300 transition-colors">
+                    <h3 class="font-bold text-slate-900 text-lg flex items-center justify-between cursor-pointer">
+                        <span>Can I print out the Family Digital Contract?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Yes, all 5 toolkits are delivered in printer-friendly PDF format so you can easily print them out and post them in your home.
+                    </p>
                 </div>
 
-                <!-- FAQ 4 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
-                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/80 transition-colors">
-                        <span>Is this relevant for children of all ages?</span>
-                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-                        Absolutely. The "Age-by-Age Safeguard Roadmap" specifically tailors controls for toddlers (0-5), pre-teens (6-12), and teenagers (13-18).
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Footer Banner -->
-    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <div class="w-16 h-16 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-bold text-3xl mx-auto mb-6 shadow-lg">
-                <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <h2 class="font-heading text-2xl md:text-4xl font-extrabold mb-4">
-                Become Your Child's Most Trusted Digital Shield Today
-            </h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mb-8">
-                Don't wait for a digital mishap before protecting your family. Get the complete guide and toolkits today for just ₦6,000.
-            </p>
-
-            <a href="#order-now" class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-brand-600 hover:from-emerald-600 hover:to-brand-700 text-white font-black text-lg px-8 py-4 rounded-2xl shadow-xl transition-all">
-                <span>ORDER NOW - ₦6,000</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-            <div class="mt-12 pt-8 border-t border-slate-800 text-slate-500 text-xs flex flex-col md:flex-row items-center justify-between gap-4">
-                <p>© 2026 Parenting in the Digital Age (Nigerian Edition). All rights reserved.</p>
-                <p class="flex items-center gap-4">
-                    <span>Selar & Paystack Compatible</span>
-                    <span>•</span>
-                    <span>100% Safe & Secure Order</span>
-                </p>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <p class="font-bold text-slate-200 text-sm">Parenting in the Digital Age — Official Nigerian Edition</p>
+            <p class="text-slate-500">© 2026 Practical Family Resource Series. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Mobile Sticky Purchase Bar (Visible on mobile screens) -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3 z-50 flex items-center justify-between gap-3 shadow-2xl">
+    <!-- Floating Sticky Bottom CTA for Mobile -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3 z-50 flex items-center justify-between shadow-2xl">
         <div>
-            <span class="text-[10px] text-slate-400 uppercase font-bold block">Digital Access Bundle</span>
-            <span class="font-heading font-black text-xl text-emerald-400">₦6,000</span>
-            <span class="text-[10px] text-slate-500 line-through">₦15,000</span>
+            <p class="text-[10px] text-slate-400 uppercase font-semibold">Special Promo</p>
+            <p class="text-lg font-black text-emerald-400">₦5,500</p>
         </div>
-        <a href="#order-now" class="bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm px-5 py-3 rounded-xl flex items-center gap-2 shadow-lg">
-            <span>ORDER NOW</span>
-            <i class="fa-solid fa-bolt text-amber-300"></i>
+        <a href=https://selar.com/1d311683r5" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg">
+            Get Copy Now
         </a>
     </div>
 
-    <!-- Modal for Order Simulation -->
-    <div id="order-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full text-center relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold">
+    <!-- Preview Modal -->
+    <div id="previewModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 relative shadow-2xl text-slate-900 space-y-4">
+            <button onclick="closePreviewModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-slate-200">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                <i class="fa-solid fa-circle-check"></i>
+
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 font-bold text-xl">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg leading-tight">Inside the Book</h3>
+                    <p class="text-xs text-slate-500">Parenting in the Digital Age</p>
+                </div>
             </div>
-            <h3 class="font-heading font-extrabold text-2xl text-slate-900 mb-2">Redirecting to Checkout</h3>
-            <p class="text-slate-600 text-sm mb-6">
-                You are purchasing the <strong class="text-slate-900">Parenting in the Digital Age Bundle</strong> for <strong class="text-emerald-700">₦6,000</strong>.
-            </p>
-            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left mb-6 text-xs text-slate-600 space-y-2">
-                <p>✔ Instant PDF eBook Download</p>
-                <p>✔ 6 Actionable Printable Toolkits</p>
-                <p>✔ Emergency Directives & Helplines</p>
+
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3 text-xs text-slate-700 max-h-60 overflow-y-auto">
+                <p class="font-bold text-slate-900 text-sm">Table of Contents Preview:</p>
+                <ul class="space-y-2 list-disc pl-4">
+                    <li><strong>Chapter 1:</strong> The Digital Nigerian Household Landscape</li>
+                    <li><strong>Chapter 2:</strong> Understanding Screen Addiction &amp; Dopamine Loops</li>
+                    <li><strong>Chapter 3:</strong> Cyber Threats: Predators, Scams &amp; Cyberbullying</li>
+                    <li><strong>Chapter 4:</strong> Setting Up Parental Controls on Routers &amp; Phones</li>
+                    <li><strong>Chapter 5:</strong> Restoring Moral Discipline Without Rebellion</li>
+                    <li><strong>Chapter 6:</strong> Nigerian Cybercrime Laws Every Teen Must Know</li>
+                </ul>
             </div>
-            <button onclick="simulateSuccess()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl text-base shadow-md transition-all">
-                Proceed to Paystack / Selar Payment
-            </button>
+
+            <a href="https://selar.com/1d311683r5" onclick="closePreviewModal()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-center block text-sm shadow-md">
+                Get Complete Book Now — ₦5,500
+            </a>
         </div>
     </div>
 
-    <!-- JavaScript Data & Logic -->
+    <!-- Interactive Scripts -->
     <script>
-        // Array of 30 Authentic Nigerian Parent Reviews
-        const reviews = [
-            { name: "Mrs. Folake Adebayo", city: "Lagos", rating: 5, text: "The WhatsApp setting guide alone saved my 13-year-old daughter from an explicit group! Worth more than ₦6,000." },
-            { name: "Dr. Chukwuma Eze", city: "Abuja", rating: 5, text: "Finally, a practical book for African homes! The CleanBrowsing DNS guide locked down our home Wi-Fi effortlessly." },
-            { name: "Amina Yussuf", city: "Kano", rating: 5, text: "Very clear steps on Google Family Link. My son's screen addiction has reduced drastically without arguing." },
-            { name: "Pastor David Okon", city: "Port Harcourt", rating: 5, text: "Essential reading for every Christian parent in Nigeria. High technical value explained in plain English." },
-            { name: "Engr. Tunde Bakare", city: "Ibadan", rating: 5, text: "The Family Digital Contract was a game changer for my household. The children signed it happily!" },
-            { name: "Chidimma Nnamdi", city: "Enugu", rating: 5, text: "The section on Yahoo Yahoo culture opened my eyes to what teens face in secondary school today." },
-            { name: "Hajia Bilkisu Mohammed", city: "Kaduna", rating: 5, text: "Saved us from accidental in-app purchases on my tablet. Simple and very informative." },
-            { name: "Chief Emeka Ofordile", city: "Onitsha", rating: 5, text: "Every Nigerian father should buy this. The Section 24 legal insights were very eye-opening." },
-            { name: "Blessing Akpan", city: "Uyo", rating: 5, text: "The 30-Day Detox challenge helped restore peace at home. My kids now read physical books again!" },
-            { name: "Engr. Funke Ogundipe", city: "Abeokuta", rating: 5, text: "I easily set up Apple Screen Time on my daughters' iPad using the step-by-step screenshots." },
-            { name: "Dr. Usman Abubakar", city: "Sokoto", rating: 5, text: "A masterpiece for modern Nigerian parenting. Instant download after payment without delay." },
-            { name: "Nkechi Anyanwu", city: "Owerri", rating: 5, text: "The fake data phishing scam checklist stopped my son from falling for online fraudsters." },
-            { name: "Bar. Segun Alabi", city: "Lagos", rating: 5, text: "Legal guidance on sextortion prevention is worth millions. Thank God I bought this book early." },
-            { name: "Mrs. Kemi Omotosho", city: "Akure", rating: 5, text: "The 15 offline activities replaced tablet time on weekends smoothly. Thank you author!" },
-            { name: "Mr. Ibrahim Bello", city: "Ilorin", rating: 5, text: "Clear, concise, and realistic for our Nigerian context. 10/10 recommendation!" },
-            { name: "Nneka Okeke", city: "Asaba", rating: 5, text: "Very easy to read on phone. The emergency numbers directory gives me real peace of mind." },
-            { name: "Deacon John Idoko", city: "Makurdi", rating: 5, text: "Transformed our family devotion screen time talks. Practical and deeply rooted in good values." },
-            { name: "Fatima Garba", city: "Jos", rating: 5, text: "No more bedtime phone battles with my teenagers. The automatic device lock guide worked like magic!" },
-            { name: "Olawale Sanusi", city: "Lekki, Lagos", rating: 5, text: "Top-tier guide! Best ₦6,000 investment I've made for my children's safety this year." },
-            { name: "Mrs. Grace Danjuma", city: "Minna", rating: 5, text: "The Weekend Tech Audit Checklist makes it easy for me to monitor their phones in just 10 minutes." },
-            { name: "Dr. Ifeanyi Okoli", city: "Aba", rating: 5, text: "Very realistic solutions for Nigerian parents. Stopped my 12 year old from secret gaming groups." },
-            { name: "Aisha Sanusi", city: "Zaria", rating: 5, text: "Clear explanations without boring tech jargon. Highly recommended for every mother." },
-            { name: "Mr. Victor Edet", city: "Calabar", rating: 5, text: "Instant PDF delivery to my email immediately after transfer. Excellent smooth service." },
-            { name: "Tolani Adeyemi", city: "Ikeja, Lagos", rating: 5, text: "The age-by-age roadmap helped me tailor rules for my 7-year-old and 15-year-old differently." },
-            { name: "Elder Olabisi Fashola", city: "Osogbo", rating: 5, text: "A must-have manual in every West African home. Protects children's innocence effectively." },
-            { name: "Chioma Ekeh", city: "Umuahia", rating: 5, text: "The WhatsApp privacy lockdown guide is worth 10x the price of the book." },
-            { name: "Capt. Idris Tanko", city: "Lokoja", rating: 5, text: "Direct, sharp, and practical. No unnecessary fluff. Applied the router DNS lock the same night." },
-            { name: "Mrs. Bukola Olanrewaju", city: "Victoria Island", rating: 5, text: "The digital health assessment helped us identify early screen addiction signs in our pre-teen." },
-            { name: "Dr. Joy Nwosu", city: "Port Harcourt", rating: 5, text: "Every PTA meeting in Nigeria should share this book. Absolutely wonderful material." },
-            { name: "Alhaji Kabir Lawal", city: "Katsina", rating: 5, text: "Comprehensive and deeply practical. May God reward the author for this effort." }
-        ];
-
-        function populateMarquees() {
-            const row1 = document.getElementById('marquee-row-1');
-            const row2 = document.getElementById('marquee-row-2');
-
-            const row1Reviews = [...reviews.slice(0, 15), ...reviews.slice(0, 15)];
-            const row2Reviews = [...reviews.slice(15, 30), ...reviews.slice(15, 30)];
-
-            const renderCard = (rev) => `
-                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-4 w-80 md:w-96 flex-shrink-0 inline-block text-left shadow-md">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
-                                ${rev.name.charAt(0)}
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-white leading-tight">${rev.name}</h4>
-                                <span class="text-[10px] text-slate-400">${rev.city}, Nigeria</span>
-                            </div>
-                        </div>
-                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
-                            <i class="fa-solid fa-circle-check"></i> Verified
-                        </span>
-                    </div>
-                    <div class="text-amber-400 text-xs mb-1.5">
-                        ${'★'.repeat(rev.rating)}
-                    </div>
-                    <p class="text-slate-300 text-xs leading-relaxed whitespace-normal font-normal">
-                        "${rev.text}"
-                    </p>
-                </div>
-            `;
-
-            row1.innerHTML = row1Reviews.map(renderCard).join('');
-            row2.innerHTML = row2Reviews.map(renderCard).join('');
+        function openPreviewModal() {
+            document.getElementById('previewModal').classList.remove('hidden');
         }
 
-        function startCountdown() {
-            let totalSeconds = 4 * 3600 + 38 * 60 + 12; // 4 hours 38 mins 12 secs
-            
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-            const millisEl = document.getElementById('millis');
-
-            let ms = 99;
-
-            setInterval(() => {
-                ms--;
-                if (ms < 0) {
-                    ms = 99;
-                    totalSeconds--;
-                }
-
-                if (totalSeconds < 0) totalSeconds = 4 * 3600 + 30 * 60; // Reset loop
-
-                const h = Math.floor(totalSeconds / 3600);
-                const m = Math.floor((totalSeconds % 3600) / 60);
-                const s = totalSeconds % 60;
-
-                hoursEl.textContent = String(h).padStart(2, '0');
-                minutesEl.textContent = String(m).padStart(2, '0');
-                secondsEl.textContent = String(s).padStart(2, '0');
-                millisEl.textContent = String(ms).padStart(2, '0');
-            }, 10);
-        }
-
-        function toggleFaq(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('i');
-            
-            content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
+        function closePreviewModal() {
+            document.getElementById('previewModal').classList.add('hidden');
         }
 
         function handlePurchase() {
-            document.getElementById('order-modal').classList.remove('hidden');
-            document.getElementById('order-modal').classList.add('flex');
+            alert("");
         }
 
-        function closeModal() {
-            document.getElementById('order-modal').classList.add('hidden');
-            document.getElementById('order-modal').classList.remove('flex');
-        }
+        // Simple Countdown Timer simulation
+        let duration = 14 * 60 + 32;
+        const timerElement = document.getElementById('countdown-timer');
 
-        function simulateSuccess() {
-            alert('Redirecting to secure Paystack/Selar checkout gateway for ₦6,000...');
-            closeModal();
-        }
-
-        // Initialize on Load
-        window.onload = function() {
-            populateMarquees();
-            startCountdown();
-        }
+        setInterval(() => {
+            if (duration > 0) {
+                duration--;
+                const minutes = Math.floor(duration / 60);
+                const seconds = duration % 60;
+                timerElement.innerHTML = `<span class="bg-slate-800 px-3 py-1 rounded">${minutes}m</span> : <span class="bg-slate-800 px-3 py-1 rounded">${seconds < 10 ? '0' + seconds : seconds}s</span>`;
+            }
+        }, 1000);
     </script>
 </body>
 </html>
